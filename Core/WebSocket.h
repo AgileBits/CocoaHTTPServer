@@ -42,6 +42,11 @@
 @property (nonatomic, readonly) dispatch_queue_t websocketQueue;
 
 /**
+ * The value of Sec-WebSocket-Origin header field.
+ */
+@property (nonatomic, copy) NSString *origin;
+
+/**
  * Public API
  * 
  * These methods are automatically called by the HTTPServer.

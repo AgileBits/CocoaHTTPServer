@@ -184,6 +184,10 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 		isVersion76 = [[self class] isVersion76Request:request];
 		isRFC6455 = [[self class] isRFC6455Request:request];
 		
+		_origin = [[aRequest headerField:@"Sec-WebSocket-Origin"] copy];
+		if (!_origin) _origin = [[aRequest headerField:@"Origin"] copy];
+
+		
 		term = [[NSData alloc] initWithBytes:"\xFF" length:1];
 	}
 	return self;
