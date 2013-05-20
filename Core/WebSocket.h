@@ -47,6 +47,11 @@
 @property (nonatomic, copy) NSString *origin;
 
 /**
+ * The protocols specified by the Sec-WebSocket-Protocol header field.
+ */
+@property (nonatomic, strong) NSArray *protocols;
+
+/**
  * Public API
  * 
  * These methods are automatically called by the HTTPServer.

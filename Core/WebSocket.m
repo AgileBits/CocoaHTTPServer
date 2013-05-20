@@ -99,7 +99,6 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 	// Look for Upgrade: and Connection: headers.
 	// If we find them, and they have the proper value,
 	// we can safely assume this is a websocket request.
-	
 	NSString *upgradeHeaderValue = [request headerField:@"Upgrade"];
 	NSString *connectionHeaderValue = [request headerField:@"Connection"];
 	
@@ -187,6 +186,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 		_origin = [[aRequest headerField:@"Sec-WebSocket-Origin"] copy];
 		if (!_origin) _origin = [[aRequest headerField:@"Origin"] copy];
 
+    _protocols = [[aRequest headerField:@"Sec-WebSocket-Protocol"] componentsSeparatedByString:@", "];
 		
 		term = [[NSData alloc] initWithBytes:"\xFF" length:1];
 	}
