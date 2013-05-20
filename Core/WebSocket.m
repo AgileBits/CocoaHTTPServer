@@ -186,7 +186,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 		_origin = [[aRequest headerField:@"Sec-WebSocket-Origin"] copy];
 		if (!_origin) _origin = [[aRequest headerField:@"Origin"] copy];
 
-    _protocols = [[aRequest headerField:@"Sec-WebSocket-Protocol"] componentsSeparatedByString:@", "];
+		_protocols = [[aRequest headerField:@"Sec-WebSocket-Protocol"] copy];
 		
 		term = [[NSData alloc] initWithBytes:"\xFF" length:1];
 	}

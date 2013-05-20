@@ -49,7 +49,7 @@
 /**
  * The protocols specified by the Sec-WebSocket-Protocol header field.
  */
-@property (nonatomic, strong) NSArray *protocols;
+@property (nonatomic, copy) NSString *protocols;
 
 /**
  * Public API
