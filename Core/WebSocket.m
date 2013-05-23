@@ -153,6 +153,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @synthesize websocketQueue;
+@synthesize asyncSocket;
 
 - (id)initWithRequest:(HTTPMessage *)aRequest socket:(GCDAsyncSocket *)socket
 {

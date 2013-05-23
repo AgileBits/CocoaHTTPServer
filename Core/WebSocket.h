@@ -42,6 +42,11 @@
 @property (nonatomic, readonly) dispatch_queue_t websocketQueue;
 
 /**
+ * Underlying socket connection.
+ */
+@property (nonatomic, readonly) GCDAsyncSocket *asyncSocket;
+
+/**
  * The value of Sec-WebSocket-Origin header field.
  */
 @property (nonatomic, copy) NSString *origin;
